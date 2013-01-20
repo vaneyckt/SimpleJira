@@ -1,5 +1,5 @@
-require 'lib/comments.rb'
-require 'lib/transitions.rb'
+require_relative 'comments.rb'
+require_relative 'transitions.rb'
 
 module SimpleJira
   class Client
