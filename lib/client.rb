@@ -17,7 +17,7 @@ module SimpleJira
           raise "Client creation requires a login, password, and jira_url to be specified"
         end
       rescue => e
-        raise "Error when trying to create client: #{e}"
+        raise "Error when trying to create client: #{e} - #{e.backtrace}"
       end
     end
 

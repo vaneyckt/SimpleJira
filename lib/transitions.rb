@@ -19,7 +19,7 @@ module SimpleJira
           raise "#{response.inspect}" if response.status != 200
           response.body.transitions
         rescue => e
-          raise "Error when trying to list available transitions of #{issue_id}: #{e}"
+          raise "Error when trying to list available transitions of #{issue_id}: #{e} - #{e.backtrace}"
         end
       end
 
@@ -40,7 +40,7 @@ module SimpleJira
           end
           raise "#{response.inspect}" if response.status != 204
         rescue => e
-          raise "Error when trying to set transition on #{issue_id}: #{e}"
+          raise "Error when trying to set transition on #{issue_id}: #{e} - #{e.backtrace}"
         end
       end
     end

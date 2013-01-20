@@ -19,7 +19,7 @@ module SimpleJira
           raise "#{response.inspect}" if response.status != 200
           response.body.comments
         rescue => e
-          raise "Error when trying to list comments of #{issue_id}: #{e}"
+          raise "Error when trying to list comments of #{issue_id}: #{e} - #{e.backtrace}"
         end
       end
 
@@ -40,7 +40,7 @@ module SimpleJira
           end
           raise "#{response.inspect}" if response.status != 201
         rescue => e
-          raise "Error when trying to create comment on #{issue_id}: #{e}"
+          raise "Error when trying to create comment on #{issue_id}: #{e} - #{e.backtrace}"
         end
       end
     end
