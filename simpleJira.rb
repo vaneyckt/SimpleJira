@@ -1,1 +1,1 @@
-require './client.rb'
+require './lib/client.rb'
