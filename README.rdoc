@@ -1,0 +1,17 @@
+== Introduction
+
+Simple Ruby wrapper for some basic functionalities of the {JIRA Project Tracker API}[http://www.atlassian.com/JIRA].
+
+== Getting Started
+
+Install the gem at the command prompt:
+
+    gem install adeona
+
+== Example
+
+    client = SimpleJira::Client.new(:login => 'my_jira_login', :password => 'my_jira_password', :jira_url => 'my_jira_website')
+    client.list_comments(issue_id)                        # list all comments of an issue
+    client.create_comment(issue_id, 'my commentary')      # add a comment to an issue
+    client.list_available_transitions(issue_id)           # list all available transitions for the current status of an issue
+    client.set_transition(issue_id, transition_id)        # transition an issue into another status
