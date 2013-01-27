@@ -6,7 +6,7 @@ Simple Ruby wrapper for some basic functionalities of the {JIRA Project Tracker 
 
 Install the gem at the command prompt:
 
-    gem install adeona
+    gem install simpleJira
 
 == Example
 
