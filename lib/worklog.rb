@@ -1,9 +1,10 @@
 require 'faraday'
+require 'faraday_middleware'
 
 module SimpleJira
   class Client
     module Worklog
-      def list_workLog(issue_id)
+      def list_worklog(issue_id)
         begin
           connection = Faraday.new(:url => "#{@jira_url}/rest/api/2/issue/#{issue_id}/worklog") do |c|
           c.use Faraday::Request::UrlEncoded
