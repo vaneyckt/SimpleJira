@@ -1,5 +1,5 @@
-require_relative 'comments.rb'
 require_relative 'worklog.rb'
+require_relative 'comments.rb'
 require_relative 'transitions.rb'
 
 module SimpleJira
@@ -22,8 +22,8 @@ module SimpleJira
       end
     end
 
+    include SimpleJira::Client::Worklog
     include SimpleJira::Client::Comments
     include SimpleJira::Client::Transitions
-    include SimpleJira::Client::Worklog
   end
 end

@@ -1,5 +1,4 @@
 require 'faraday'
-require 'Time'
 
 module SimpleJira
   class Client
@@ -13,15 +12,16 @@ module SimpleJira
           c.use FaradayMiddleware::ParseJson
           c.use Faraday::Adapter::NetHttp
         end
-          connection.basic_auth(@login, @password)
+        
+        connection.basic_auth(@login, @password)
 
-          response = connection.get
-          raise "#{response.worklogs}" if response.status != 200
-          response.body.worklogs
+        response = connection.get
+        raise "#{response.inspect}" if response.status != 200
+        response.body.worklogs
         rescue => e
-          raise "Error when trying to list comments of #{issue_id}: #{e} - #{e.backtrace}"
+          raise "Error when trying to list worklogs of #{issue_id}: #{e} - #{e.backtrace}"
         end
-      end      
+      end
     end
   end
 end
